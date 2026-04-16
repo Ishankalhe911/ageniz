@@ -1,0 +1,21 @@
+# Environments
+.env
+venv/
+env/
+__pycache__/
+*.pyc
+
+# Node / Frontend
+node_modules/
+npm-debug.log
+dist/
+build/
+.next/
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Algorand / Local test data (optional but good)
+.algo/

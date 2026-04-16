@@ -1,0 +1,388 @@
+#pragma version 11
+#pragma typetrack false
+
+// algopy.arc4.ARC4Contract.approval_program() -> uint64:
+main:
+    intcblock 0 1 32 5000000
+    bytecblock "daily_spent" "last_reset" "oracle_pubkey" 0x068101 0x151f7c75
+    // contract/ageniz_contract.py:18
+    // class AgenizContract(ARC4Contract):
+    pushbytes 0x30c6d58a // method "opt_in()void"
+    txna ApplicationArgs 0
+    match main_opt_in_route@4
+
+main_switch_case_next@5:
+    // contract/ageniz_contract.py:18
+    // class AgenizContract(ARC4Contract):
+    txn OnCompletion
+    !
+    assert
+    txn ApplicationID
+    bz main_create_NoOp@12
+    pushbytess 0xe83a87ab 0x96a93f7c 0xe32245d4 0xf6439c8e // method "noop()void", method "execute_payment(uint64,address,byte[64],address)void", method "get_daily_spent()uint64", method "get_remaining_limit()uint64"
+    txna ApplicationArgs 0
+    match main_noop_route@7 execute_payment get_daily_spent get_remaining_limit
+    err
+
+main_noop_route@7:
+    // contract/ageniz_contract.py:33
+    // @arc4.abimethod
+    intc_1 // 1
+    return
+
+main_create_NoOp@12:
+    // contract/ageniz_contract.py:18
+    // class AgenizContract(ARC4Contract):
+    pushbytes 0xf4700661 // method "init(address)void"
+    txna ApplicationArgs 0
+    match init
+    err
+
+main_opt_in_route@4:
+    // contract/ageniz_contract.py:36
+    // @arc4.abimethod(allow_actions=["OptIn"])
+    txn OnCompletion
+    intc_1 // OptIn
+    ==
+    txn ApplicationID
+    &&
+    assert
+    b opt_in
+
+
+// ageniz_contract.AgenizContract.init[routing]() -> void:
+init:
+    // contract/ageniz_contract.py:27-28
+    // # ── Deploy (called ONCE) ───────────────────────────────────────────────
+    // @arc4.abimethod(create="require")
+    txna ApplicationArgs 1
+    dup
+    len
+    intc_2 // 32
+    ==
+    assert // invalid number of bytes for arc4.static_array<arc4.uint8, 32>
+    // contract/ageniz_contract.py:31
+    // self.oracle_pubkey.value = oracle_pubkey.bytes # ✅ CORRECT AND CLEAN
+    bytec_2 // "oracle_pubkey"
+    swap
+    app_global_put
+    // contract/ageniz_contract.py:27-28
+    // # ── Deploy (called ONCE) ───────────────────────────────────────────────
+    // @arc4.abimethod(create="require")
+    intc_1 // 1
+    return
+
+
+// ageniz_contract.AgenizContract.opt_in[routing]() -> void:
+opt_in:
+    // contract/ageniz_contract.py:39
+    // self.daily_spent[Txn.sender] = UInt64(0)
+    txn Sender
+    bytec_0 // "daily_spent"
+    intc_0 // 0
+    app_local_put
+    // contract/ageniz_contract.py:40
+    // self.last_reset[Txn.sender]  = Global.latest_timestamp
+    txn Sender
+    bytec_1 // "last_reset"
+    global LatestTimestamp
+    app_local_put
+    // contract/ageniz_contract.py:36
+    // @arc4.abimethod(allow_actions=["OptIn"])
+    intc_1 // 1
+    return
+
+
+// ageniz_contract.AgenizContract.execute_payment[routing]() -> void:
+execute_payment:
+    pushbytes ""
+    // contract/ageniz_contract.py:42
+    // @arc4.abimethod
+    txna ApplicationArgs 1
+    dup
+    len
+    pushint 8
+    ==
+    assert // invalid number of bytes for arc4.uint64
+    btoi
+    txna ApplicationArgs 2
+    dup
+    len
+    intc_2 // 32
+    ==
+    assert // invalid number of bytes for arc4.static_array<arc4.uint8, 32>
+    txna ApplicationArgs 3
+    dup
+    len
+    pushint 64
+    ==
+    assert // invalid number of bytes for arc4.static_array<arc4.uint8, 64>
+    txna ApplicationArgs 4
+    dup
+    len
+    intc_2 // 32
+    ==
+    assert // invalid number of bytes for arc4.static_array<arc4.uint8, 32>
+
+execute_payment_while_top@5:
+    pushint 3010
+    global OpcodeBudget
+    >
+    bz execute_payment_after_while@10
+    itxn_begin
+    pushint 6 // appl
+    itxn_field TypeEnum
+    pushint 5 // DeleteApplication
+    itxn_field OnCompletion
+    bytec_3 // 0x068101
+    itxn_field ApprovalProgram
+    bytec_3 // 0x068101
+    itxn_field ClearStateProgram
+    intc_0 // 0
+    itxn_field Fee
+    itxn_submit
+    b execute_payment_while_top@5
+
+execute_payment_after_while@10:
+    // contract/ageniz_contract.py:56
+    // Bytes(b"MX") +
+    pushbytes 0x4d58
+    // contract/ageniz_contract.py:56-57
+    // Bytes(b"MX") +
+    // agent.bytes +
+    dig 1
+    concat
+    // contract/ageniz_contract.py:58
+    // op.itob(amount) +
+    dig 4
+    itob
+    // contract/ageniz_contract.py:56-58
+    // Bytes(b"MX") +
+    // agent.bytes +
+    // op.itob(amount) +
+    concat
+    // contract/ageniz_contract.py:59
+    // Bytes(b"SAFE")
+    pushbytes 0x53414645
+    // contract/ageniz_contract.py:56-59
+    // Bytes(b"MX") +
+    // agent.bytes +
+    // op.itob(amount) +
+    // Bytes(b"SAFE")
+    concat
+    // contract/ageniz_contract.py:62-63
+    // # ── 🔍 THE GATES OF TRUTH ──
+    // assert payload.length == 46, "ERR: Payload Length Not 46"
+    dup
+    len
+    pushint 46
+    ==
+    assert // ERR: Payload Length Not 46
+    // contract/ageniz_contract.py:70
+    // op.extract(signature.bytes, 0, 64),
+    dig 2
+    extract 0 64
+    // contract/ageniz_contract.py:71
+    // op.extract(self.oracle_pubkey.value, 0, 32) # Using actual Global State Key
+    intc_0 // 0
+    bytec_2 // "oracle_pubkey"
+    app_global_get_ex
+    assert // check self.oracle_pubkey exists
+    extract 0 32
+    // contract/ageniz_contract.py:66-72
+    // # ── 🔥 THE ACTUAL FIX: BARE VERIFICATION 🔥 ──
+    // # op.ed25519verify_bare verifies EXACT raw bytes without adding "ProgData"
+    // is_valid = op.ed25519verify_bare(
+    //     payload,
+    //     op.extract(signature.bytes, 0, 64),
+    //     op.extract(self.oracle_pubkey.value, 0, 32) # Using actual Global State Key
+    // )
+    ed25519verify_bare
+    // contract/ageniz_contract.py:74
+    // assert is_valid, "REJECTED: Oracle signature invalid or forged!"
+    assert // REJECTED: Oracle signature invalid or forged!
+    // contract/ageniz_contract.py:76-77
+    // # 3. Check Daily Cap (Local State)
+    // current_time = Global.latest_timestamp
+    global LatestTimestamp
+    dup
+    bury 6
+    // contract/ageniz_contract.py:81
+    // if current_time - self.last_reset[Txn.sender] >= one_day:
+    txn Sender
+    intc_0 // 0
+    bytec_1 // "last_reset"
+    app_local_get_ex
+    assert // check self.last_reset exists for account
+    -
+    // contract/ageniz_contract.py:78
+    // one_day      = UInt64(86400)
+    pushint 86400
+    // contract/ageniz_contract.py:81
+    // if current_time - self.last_reset[Txn.sender] >= one_day:
+    >=
+    bz execute_payment_after_if_else@3
+    // contract/ageniz_contract.py:82
+    // self.daily_spent[Txn.sender] = UInt64(0)
+    txn Sender
+    bytec_0 // "daily_spent"
+    intc_0 // 0
+    app_local_put
+    // contract/ageniz_contract.py:83
+    // self.last_reset[Txn.sender]  = current_time
+    txn Sender
+    bytec_1 // "last_reset"
+    dig 6
+    app_local_put
+
+execute_payment_after_if_else@3:
+    // contract/ageniz_contract.py:85
+    // assert self.daily_spent[Txn.sender] + amount <= limit, \
+    txn Sender
+    intc_0 // 0
+    bytec_0 // "daily_spent"
+    app_local_get_ex
+    assert // check self.daily_spent exists for account
+    dig 4
+    dup
+    cover 2
+    +
+    // contract/ageniz_contract.py:79
+    // limit        = UInt64(5_000_000) # 5 ALGO limit
+    intc_3 // 5000000
+    // contract/ageniz_contract.py:85
+    // assert self.daily_spent[Txn.sender] + amount <= limit, \
+    <=
+    // contract/ageniz_contract.py:85-86
+    // assert self.daily_spent[Txn.sender] + amount <= limit, \
+    //     "REJECTED: Daily 5 ALGO spending limit exceeded!"
+    assert // REJECTED: Daily 5 ALGO spending limit exceeded!
+    // contract/ageniz_contract.py:88-89
+    // # 4. Check Contract Balance
+    // assert Global.current_application_address.balance >= amount, \
+    global CurrentApplicationAddress
+    acct_params_get AcctBalance
+    assert // account funded
+    dig 1
+    >=
+    // contract/ageniz_contract.py:88-90
+    // # 4. Check Contract Balance
+    // assert Global.current_application_address.balance >= amount, \
+    //     "REJECTED: Insufficient contract balance!"
+    assert // REJECTED: Insufficient contract balance!
+    // contract/ageniz_contract.py:92-97
+    // # 5. Final Execution
+    // itxn.Payment(
+    //     receiver=recipient,
+    //     amount=amount,
+    //     fee=0
+    // ).submit()
+    itxn_begin
+    dup
+    itxn_field Amount
+    dig 3
+    itxn_field Receiver
+    // contract/ageniz_contract.py:92-93
+    // # 5. Final Execution
+    // itxn.Payment(
+    intc_1 // pay
+    itxn_field TypeEnum
+    // contract/ageniz_contract.py:96
+    // fee=0
+    intc_0 // 0
+    itxn_field Fee
+    // contract/ageniz_contract.py:92-97
+    // # 5. Final Execution
+    // itxn.Payment(
+    //     receiver=recipient,
+    //     amount=amount,
+    //     fee=0
+    // ).submit()
+    itxn_submit
+    // contract/ageniz_contract.py:99-100
+    // # 6. Update State
+    // self.daily_spent[Txn.sender] += amount
+    txn Sender
+    dup
+    intc_0 // 0
+    bytec_0 // "daily_spent"
+    app_local_get_ex
+    assert // check self.daily_spent exists for account
+    uncover 2
+    +
+    bytec_0 // "daily_spent"
+    swap
+    app_local_put
+    // contract/ageniz_contract.py:42
+    // @arc4.abimethod
+    intc_1 // 1
+    return
+
+
+// ageniz_contract.AgenizContract.get_daily_spent[routing]() -> void:
+get_daily_spent:
+    // contract/ageniz_contract.py:106
+    // return self.daily_spent[Txn.sender]
+    txn Sender
+    intc_0 // 0
+    bytec_0 // "daily_spent"
+    app_local_get_ex
+    assert // check self.daily_spent exists for account
+    // contract/ageniz_contract.py:102-103
+    // # ── Read-only Helpers ──────────────────────────────────────────────────
+    // @arc4.abimethod(readonly=True)
+    itob
+    bytec 4 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+
+// ageniz_contract.AgenizContract.get_remaining_limit[routing]() -> void:
+get_remaining_limit:
+    // contract/ageniz_contract.py:112
+    // spent = self.daily_spent[Txn.sender]
+    txn Sender
+    intc_0 // 0
+    bytec_0 // "daily_spent"
+    app_local_get_ex
+    swap
+    dup
+    uncover 2
+    assert // check self.daily_spent exists for account
+    // contract/ageniz_contract.py:111
+    // limit = UInt64(5_000_000)
+    intc_3 // 5000000
+    // contract/ageniz_contract.py:114-115
+    // # Explicit return paths so Puya compiler doesn't panic
+    // if spent >= limit:
+    >=
+    bz get_remaining_limit_else_body@3
+    // contract/ageniz_contract.py:116
+    // return UInt64(0)
+    intc_0 // 0
+
+get_remaining_limit_after_inlined_ageniz_contract.AgenizContract.get_remaining_limit@4:
+    // contract/ageniz_contract.py:108
+    // @arc4.abimethod(readonly=True)
+    itob
+    bytec 4 // 0x151f7c75
+    swap
+    concat
+    log
+    intc_1 // 1
+    return
+
+get_remaining_limit_else_body@3:
+    // contract/ageniz_contract.py:111
+    // limit = UInt64(5_000_000)
+    intc_3 // 5000000
+    // contract/ageniz_contract.py:118
+    // return limit - spent
+    dig 1
+    -
+    // contract/ageniz_contract.py:108
+    // @arc4.abimethod(readonly=True)
+    b get_remaining_limit_after_inlined_ageniz_contract.AgenizContract.get_remaining_limit@4

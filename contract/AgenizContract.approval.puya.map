@@ -1,0 +1,2523 @@
+{
+  "version": 3,
+  "sources": [
+    "ageniz_contract.py"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAiBA;;;;;;AAAA;;;AAAA;;;;AAAA;;AAAA;AAAA;AAAA;;AAAA;;;AAAA;;;;;;;;;;;;;;;;;;;;;;AAAA;;;AAAA;;;;;;;;;;AAAA;AAeK;AAAA;AAfL;;;;;;AAAA;;;AAAA;;;;AAAA;AAkBK;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;;;AARA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAGG;AAAA;AAAA;AAHH;AAAA;AAWoB;;AAAjB;AAA+B;AAA/B;AACgB;;AAAhB;AAA+B;;AAA/B;AAJH;AAAA;;;AAMA;;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;;;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;;;AAAA;AAAA;AAAA;AAAA;AAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAcO;;;;AAAA;;AAAA;AAEA;;AAAA;AAFA;AAGA;;;;;;AAHA;AAOG;AAAA;AAAkB;;AAAlB;AAAP;AAOI;;AAAA;;;AACW;AAAA;AAAA;AAAA;AAAX;;;AAHO;AAMX;AAGe;;AAAA;AAAA;;AAImB;;AAAhB;AAAA;AAAA;AAAA;AAAf;AAHY;;;;AAGZ;AAAX;;;AAC6B;;AAAjB;AAA+B;AAA/B;AACgB;;AAAhB;AAAA;;AAAA;AAEoB;;AAAjB;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;;AAAA;AANQ;AAMR;AAAP;AAIO;;AAAA;;AAAA;AAAA;;AAAA;AAAP;AAIA;;;;;;;;AAAA;;;AAGQ;;;AAHR;AAOiB;;AAAjB;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AAAA;AAAA;AAAA;AA1DH;AAAA;AAgE2B;;AAAjB;AAAA;AAAA;AAAA;AAHV;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAS4B;;AAAjB;AAAA;AAAA;AAAA;AAAA;AAAA;;AAAA;AADA;AAIL;AAAX;;;AACmB;AARd;AAAA;;AAAA;AAAA;AAAA;AAAA;AAAA;AAGW;AAOG;;AAAA;AAVd",
+  "op_pc_offset": 0,
+  "pc_events": {
+    "1": {
+      "subroutine": "algopy.arc4.ARC4Contract.approval_program",
+      "params": {},
+      "block": "main",
+      "stack_in": [],
+      "op": "intcblock 0 1 32 5000000"
+    },
+    "10": {
+      "op": "bytecblock \"daily_spent\" \"last_reset\" \"oracle_pubkey\" 0x068101 0x151f7c75"
+    },
+    "58": {
+      "op": "pushbytes 0x30c6d58a // method \"opt_in()void\"",
+      "defined_out": [
+        "Method(opt_in()void)"
+      ],
+      "stack_out": [
+        "Method(opt_in()void)"
+      ]
+    },
+    "64": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(opt_in()void)",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "Method(opt_in()void)",
+        "tmp%0#1"
+      ]
+    },
+    "67": {
+      "op": "match main_opt_in_route@4",
+      "stack_out": []
+    },
+    "71": {
+      "block": "main_switch_case_next@5",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%6#0"
+      ],
+      "stack_out": [
+        "tmp%6#0"
+      ]
+    },
+    "73": {
+      "op": "!",
+      "defined_out": [
+        "tmp%7#0"
+      ],
+      "stack_out": [
+        "tmp%7#0"
+      ]
+    },
+    "74": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "75": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "tmp%8#0"
+      ]
+    },
+    "77": {
+      "op": "bz main_create_NoOp@12",
+      "stack_out": []
+    },
+    "80": {
+      "op": "pushbytess 0xe83a87ab 0x96a93f7c 0xe32245d4 0xf6439c8e // method \"noop()void\", method \"execute_payment(uint64,address,byte[64],address)void\", method \"get_daily_spent()uint64\", method \"get_remaining_limit()uint64\"",
+      "defined_out": [
+        "Method(execute_payment(uint64,address,byte[64],address)void)",
+        "Method(get_daily_spent()uint64)",
+        "Method(get_remaining_limit()uint64)",
+        "Method(noop()void)"
+      ],
+      "stack_out": [
+        "Method(noop()void)",
+        "Method(execute_payment(uint64,address,byte[64],address)void)",
+        "Method(get_daily_spent()uint64)",
+        "Method(get_remaining_limit()uint64)"
+      ]
+    },
+    "102": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(execute_payment(uint64,address,byte[64],address)void)",
+        "Method(get_daily_spent()uint64)",
+        "Method(get_remaining_limit()uint64)",
+        "Method(noop()void)",
+        "tmp%10#0"
+      ],
+      "stack_out": [
+        "Method(noop()void)",
+        "Method(execute_payment(uint64,address,byte[64],address)void)",
+        "Method(get_daily_spent()uint64)",
+        "Method(get_remaining_limit()uint64)",
+        "tmp%10#0"
+      ]
+    },
+    "105": {
+      "op": "match main_noop_route@7 execute_payment get_daily_spent get_remaining_limit",
+      "stack_out": []
+    },
+    "115": {
+      "op": "err"
+    },
+    "116": {
+      "block": "main_noop_route@7",
+      "stack_in": [],
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "117": {
+      "op": "return",
+      "stack_out": []
+    },
+    "118": {
+      "block": "main_create_NoOp@12",
+      "stack_in": [],
+      "op": "pushbytes 0xf4700661 // method \"init(address)void\"",
+      "defined_out": [
+        "Method(init(address)void)"
+      ],
+      "stack_out": [
+        "Method(init(address)void)"
+      ]
+    },
+    "124": {
+      "op": "txna ApplicationArgs 0",
+      "defined_out": [
+        "Method(init(address)void)",
+        "tmp%11#0"
+      ],
+      "stack_out": [
+        "Method(init(address)void)",
+        "tmp%11#0"
+      ]
+    },
+    "127": {
+      "op": "match init",
+      "stack_out": []
+    },
+    "131": {
+      "op": "err"
+    },
+    "132": {
+      "block": "main_opt_in_route@4",
+      "stack_in": [],
+      "op": "txn OnCompletion",
+      "defined_out": [
+        "tmp%1#1"
+      ],
+      "stack_out": [
+        "tmp%1#1"
+      ]
+    },
+    "134": {
+      "op": "intc_1 // OptIn",
+      "defined_out": [
+        "OptIn",
+        "tmp%1#1"
+      ],
+      "stack_out": [
+        "tmp%1#1",
+        "OptIn"
+      ]
+    },
+    "135": {
+      "op": "==",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "136": {
+      "op": "txn ApplicationID",
+      "defined_out": [
+        "tmp%2#0",
+        "tmp%3#0"
+      ],
+      "stack_out": [
+        "tmp%2#0",
+        "tmp%3#0"
+      ]
+    },
+    "138": {
+      "op": "&&",
+      "defined_out": [
+        "tmp%5#0"
+      ],
+      "stack_out": [
+        "tmp%5#0"
+      ]
+    },
+    "139": {
+      "op": "assert",
+      "stack_out": []
+    },
+    "140": {
+      "op": "b opt_in"
+    },
+    "143": {
+      "subroutine": "ageniz_contract.AgenizContract.init[routing]",
+      "params": {},
+      "block": "init",
+      "stack_in": [],
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "oracle_pubkey#0"
+      ],
+      "stack_out": [
+        "oracle_pubkey#0"
+      ]
+    },
+    "146": {
+      "op": "dup",
+      "defined_out": [
+        "oracle_pubkey#0",
+        "oracle_pubkey#0 (copy)"
+      ],
+      "stack_out": [
+        "oracle_pubkey#0",
+        "oracle_pubkey#0 (copy)"
+      ]
+    },
+    "147": {
+      "op": "len",
+      "defined_out": [
+        "len%0#0",
+        "oracle_pubkey#0"
+      ],
+      "stack_out": [
+        "oracle_pubkey#0",
+        "len%0#0"
+      ]
+    },
+    "148": {
+      "op": "intc_2 // 32",
+      "defined_out": [
+        "32",
+        "len%0#0",
+        "oracle_pubkey#0"
+      ],
+      "stack_out": [
+        "oracle_pubkey#0",
+        "len%0#0",
+        "32"
+      ]
+    },
+    "149": {
+      "op": "==",
+      "defined_out": [
+        "eq%0#0",
+        "oracle_pubkey#0"
+      ],
+      "stack_out": [
+        "oracle_pubkey#0",
+        "eq%0#0"
+      ]
+    },
+    "150": {
+      "error": "invalid number of bytes for arc4.static_array<arc4.uint8, 32>",
+      "op": "assert // invalid number of bytes for arc4.static_array<arc4.uint8, 32>",
+      "stack_out": [
+        "oracle_pubkey#0"
+      ]
+    },
+    "151": {
+      "op": "bytec_2 // \"oracle_pubkey\"",
+      "defined_out": [
+        "\"oracle_pubkey\"",
+        "oracle_pubkey#0"
+      ],
+      "stack_out": [
+        "oracle_pubkey#0",
+        "\"oracle_pubkey\""
+      ]
+    },
+    "152": {
+      "op": "swap",
+      "stack_out": [
+        "\"oracle_pubkey\"",
+        "oracle_pubkey#0"
+      ]
+    },
+    "153": {
+      "op": "app_global_put",
+      "stack_out": []
+    },
+    "154": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "155": {
+      "op": "return",
+      "stack_out": []
+    },
+    "156": {
+      "subroutine": "ageniz_contract.AgenizContract.opt_in[routing]",
+      "params": {},
+      "block": "opt_in",
+      "stack_in": [],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0"
+      ]
+    },
+    "158": {
+      "op": "bytec_0 // \"daily_spent\"",
+      "defined_out": [
+        "\"daily_spent\"",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "\"daily_spent\""
+      ]
+    },
+    "159": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "\"daily_spent\"",
+        "0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "tmp%0#0",
+        "\"daily_spent\"",
+        "0"
+      ]
+    },
+    "160": {
+      "op": "app_local_put",
+      "stack_out": []
+    },
+    "161": {
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "163": {
+      "op": "bytec_1 // \"last_reset\"",
+      "defined_out": [
+        "\"last_reset\"",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0",
+        "\"last_reset\""
+      ]
+    },
+    "164": {
+      "op": "global LatestTimestamp",
+      "defined_out": [
+        "\"last_reset\"",
+        "tmp%1#0",
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0",
+        "\"last_reset\"",
+        "tmp%1#0"
+      ]
+    },
+    "166": {
+      "op": "app_local_put",
+      "stack_out": []
+    },
+    "167": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "168": {
+      "op": "return",
+      "stack_out": []
+    },
+    "169": {
+      "subroutine": "ageniz_contract.AgenizContract.execute_payment[routing]",
+      "params": {},
+      "block": "execute_payment",
+      "stack_in": [],
+      "op": "pushbytes \"\"",
+      "stack_out": [
+        "current_time#0"
+      ]
+    },
+    "171": {
+      "op": "txna ApplicationArgs 1",
+      "defined_out": [
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "tmp%0#0"
+      ]
+    },
+    "174": {
+      "op": "dup",
+      "defined_out": [
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "tmp%0#0",
+        "tmp%0#0 (copy)"
+      ]
+    },
+    "175": {
+      "op": "len",
+      "defined_out": [
+        "len%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "tmp%0#0",
+        "len%0#0"
+      ]
+    },
+    "176": {
+      "op": "pushint 8",
+      "defined_out": [
+        "8",
+        "len%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "tmp%0#0",
+        "len%0#0",
+        "8"
+      ]
+    },
+    "178": {
+      "op": "==",
+      "defined_out": [
+        "eq%0#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "tmp%0#0",
+        "eq%0#0"
+      ]
+    },
+    "179": {
+      "error": "invalid number of bytes for arc4.uint64",
+      "op": "assert // invalid number of bytes for arc4.uint64",
+      "stack_out": [
+        "current_time#0",
+        "tmp%0#0"
+      ]
+    },
+    "180": {
+      "op": "btoi",
+      "defined_out": [
+        "amount#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0"
+      ]
+    },
+    "181": {
+      "op": "txna ApplicationArgs 2"
+    },
+    "184": {
+      "op": "dup",
+      "defined_out": [
+        "amount#0",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "recipient#0"
+      ]
+    },
+    "185": {
+      "op": "len",
+      "defined_out": [
+        "amount#0",
+        "len%1#0",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "len%1#0"
+      ]
+    },
+    "186": {
+      "op": "intc_2 // 32",
+      "defined_out": [
+        "32",
+        "amount#0",
+        "len%1#0",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "len%1#0",
+        "32"
+      ]
+    },
+    "187": {
+      "op": "==",
+      "defined_out": [
+        "amount#0",
+        "eq%1#0",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "eq%1#0"
+      ]
+    },
+    "188": {
+      "error": "invalid number of bytes for arc4.static_array<arc4.uint8, 32>",
+      "op": "assert // invalid number of bytes for arc4.static_array<arc4.uint8, 32>",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0"
+      ]
+    },
+    "189": {
+      "op": "txna ApplicationArgs 3"
+    },
+    "192": {
+      "op": "dup",
+      "defined_out": [
+        "amount#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "signature#0"
+      ]
+    },
+    "193": {
+      "op": "len",
+      "defined_out": [
+        "amount#0",
+        "len%2#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "len%2#0"
+      ]
+    },
+    "194": {
+      "op": "pushint 64",
+      "defined_out": [
+        "64",
+        "amount#0",
+        "len%2#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "len%2#0",
+        "64"
+      ]
+    },
+    "196": {
+      "op": "==",
+      "defined_out": [
+        "amount#0",
+        "eq%2#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "eq%2#0"
+      ]
+    },
+    "197": {
+      "error": "invalid number of bytes for arc4.static_array<arc4.uint8, 64>",
+      "op": "assert // invalid number of bytes for arc4.static_array<arc4.uint8, 64>",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0"
+      ]
+    },
+    "198": {
+      "op": "txna ApplicationArgs 4"
+    },
+    "201": {
+      "op": "dup",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "agent#0"
+      ]
+    },
+    "202": {
+      "op": "len",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "len%3#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "len%3#0"
+      ]
+    },
+    "203": {
+      "op": "intc_2 // 32",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "len%3#0",
+        "32"
+      ]
+    },
+    "204": {
+      "op": "==",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "eq%3#0",
+        "recipient#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "eq%3#0"
+      ]
+    },
+    "205": {
+      "error": "invalid number of bytes for arc4.static_array<arc4.uint8, 32>",
+      "op": "assert // invalid number of bytes for arc4.static_array<arc4.uint8, 32>",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "206": {
+      "block": "execute_payment_while_top@5",
+      "stack_in": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ],
+      "op": "pushint 3010",
+      "defined_out": [
+        "3010"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "3010"
+      ]
+    },
+    "209": {
+      "op": "global OpcodeBudget",
+      "defined_out": [
+        "3010",
+        "tmp%1#2"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "3010",
+        "tmp%1#2"
+      ]
+    },
+    "211": {
+      "op": ">",
+      "defined_out": [
+        "tmp%2#2"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%2#2"
+      ]
+    },
+    "212": {
+      "op": "bz execute_payment_after_while@10",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "215": {
+      "op": "itxn_begin"
+    },
+    "216": {
+      "op": "pushint 6 // appl",
+      "defined_out": [
+        "appl"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "appl"
+      ]
+    },
+    "218": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "220": {
+      "op": "pushint 5 // DeleteApplication",
+      "defined_out": [
+        "DeleteApplication"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "DeleteApplication"
+      ]
+    },
+    "222": {
+      "op": "itxn_field OnCompletion",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "224": {
+      "op": "bytec_3 // 0x068101",
+      "defined_out": [
+        "0x068101"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "0x068101"
+      ]
+    },
+    "225": {
+      "op": "itxn_field ApprovalProgram",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "227": {
+      "op": "bytec_3 // 0x068101",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "0x068101"
+      ]
+    },
+    "228": {
+      "op": "itxn_field ClearStateProgram",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "230": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "0"
+      ]
+    },
+    "231": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "233": {
+      "op": "itxn_submit"
+    },
+    "234": {
+      "op": "b execute_payment_while_top@5"
+    },
+    "237": {
+      "block": "execute_payment_after_while@10",
+      "stack_in": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ],
+      "op": "pushbytes 0x4d58",
+      "defined_out": [
+        "0x4d58"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "0x4d58"
+      ]
+    },
+    "241": {
+      "op": "dig 1",
+      "defined_out": [
+        "0x4d58",
+        "agent#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "0x4d58",
+        "agent#0"
+      ]
+    },
+    "243": {
+      "op": "concat",
+      "defined_out": [
+        "agent#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%0#0"
+      ]
+    },
+    "244": {
+      "op": "dig 4",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%0#0",
+        "amount#0"
+      ]
+    },
+    "246": {
+      "op": "itob",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "tmp%0#0",
+        "tmp%1#1"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%0#0",
+        "tmp%1#1"
+      ]
+    },
+    "247": {
+      "op": "concat",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "tmp%2#1"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%2#1"
+      ]
+    },
+    "248": {
+      "op": "pushbytes 0x53414645",
+      "defined_out": [
+        "0x53414645",
+        "agent#0",
+        "amount#0",
+        "tmp%2#1"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%2#1",
+        "0x53414645"
+      ]
+    },
+    "254": {
+      "op": "concat",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0"
+      ]
+    },
+    "255": {
+      "op": "dup",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "payload#0 (copy)"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "payload#0 (copy)"
+      ]
+    },
+    "256": {
+      "op": "len",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "tmp%4#1"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%4#1"
+      ]
+    },
+    "257": {
+      "op": "pushint 46",
+      "defined_out": [
+        "46",
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "tmp%4#1"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%4#1",
+        "46"
+      ]
+    },
+    "259": {
+      "op": "==",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "tmp%5#1"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%5#1"
+      ]
+    },
+    "260": {
+      "error": "ERR: Payload Length Not 46",
+      "op": "assert // ERR: Payload Length Not 46",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0"
+      ]
+    },
+    "261": {
+      "op": "dig 2",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "signature#0"
+      ]
+    },
+    "263": {
+      "op": "extract 0 64",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "signature#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%8#0"
+      ]
+    },
+    "266": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "signature#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%8#0",
+        "0"
+      ]
+    },
+    "267": {
+      "op": "bytec_2 // \"oracle_pubkey\"",
+      "defined_out": [
+        "\"oracle_pubkey\"",
+        "0",
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "signature#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%8#0",
+        "0",
+        "\"oracle_pubkey\""
+      ]
+    },
+    "268": {
+      "op": "app_global_get_ex",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "maybe_exists%0#0",
+        "maybe_value%0#0",
+        "payload#0",
+        "signature#0",
+        "tmp%8#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%8#0",
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "269": {
+      "error": "check self.oracle_pubkey exists",
+      "op": "assert // check self.oracle_pubkey exists",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%8#0",
+        "maybe_value%0#0"
+      ]
+    },
+    "270": {
+      "op": "extract 0 32",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "payload#0",
+        "signature#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "payload#0",
+        "tmp%8#0",
+        "tmp%9#0"
+      ]
+    },
+    "273": {
+      "op": "ed25519verify_bare",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "is_valid#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "is_valid#0"
+      ]
+    },
+    "274": {
+      "error": "REJECTED: Oracle signature invalid or forged!",
+      "op": "assert // REJECTED: Oracle signature invalid or forged!",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "275": {
+      "op": "global LatestTimestamp"
+    },
+    "277": {
+      "op": "dup",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0",
+        "current_time#0"
+      ]
+    },
+    "278": {
+      "op": "bury 6",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0"
+      ]
+    },
+    "280": {
+      "op": "txn Sender",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0",
+        "tmp%12#0"
+      ]
+    },
+    "282": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0",
+        "tmp%12#0",
+        "0"
+      ]
+    },
+    "283": {
+      "op": "bytec_1 // \"last_reset\"",
+      "defined_out": [
+        "\"last_reset\"",
+        "0",
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%12#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0",
+        "tmp%12#0",
+        "0",
+        "\"last_reset\""
+      ]
+    },
+    "284": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "maybe_exists%1#0",
+        "maybe_value%1#0",
+        "signature#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0",
+        "maybe_value%1#0",
+        "maybe_exists%1#0"
+      ]
+    },
+    "285": {
+      "error": "check self.last_reset exists for account",
+      "op": "assert // check self.last_reset exists for account",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "current_time#0",
+        "maybe_value%1#0"
+      ]
+    },
+    "286": {
+      "op": "-",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%13#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%13#0"
+      ]
+    },
+    "287": {
+      "op": "pushint 86400",
+      "defined_out": [
+        "86400",
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%13#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%13#0",
+        "86400"
+      ]
+    },
+    "291": {
+      "op": ">=",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%14#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%14#0"
+      ]
+    },
+    "292": {
+      "op": "bz execute_payment_after_if_else@3",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "295": {
+      "op": "txn Sender",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%15#0"
+      ]
+    },
+    "297": {
+      "op": "bytec_0 // \"daily_spent\"",
+      "defined_out": [
+        "\"daily_spent\"",
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%15#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%15#0",
+        "\"daily_spent\""
+      ]
+    },
+    "298": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%15#0",
+        "\"daily_spent\"",
+        "0"
+      ]
+    },
+    "299": {
+      "op": "app_local_put",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "300": {
+      "op": "txn Sender",
+      "defined_out": [
+        "agent#0",
+        "amount#0",
+        "current_time#0",
+        "signature#0",
+        "tmp%16#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%16#0"
+      ]
+    },
+    "302": {
+      "op": "bytec_1 // \"last_reset\"",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%16#0",
+        "\"last_reset\""
+      ]
+    },
+    "303": {
+      "op": "dig 6",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%16#0",
+        "\"last_reset\"",
+        "current_time#0"
+      ]
+    },
+    "305": {
+      "op": "app_local_put",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "306": {
+      "block": "execute_payment_after_if_else@3",
+      "stack_in": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%17#0"
+      ]
+    },
+    "308": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%17#0",
+        "0"
+      ]
+    },
+    "309": {
+      "op": "bytec_0 // \"daily_spent\"",
+      "defined_out": [
+        "\"daily_spent\"",
+        "0",
+        "tmp%17#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%17#0",
+        "0",
+        "\"daily_spent\""
+      ]
+    },
+    "310": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "maybe_exists%2#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "maybe_value%2#0",
+        "maybe_exists%2#0"
+      ]
+    },
+    "311": {
+      "error": "check self.daily_spent exists for account",
+      "op": "assert // check self.daily_spent exists for account",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "maybe_value%2#0"
+      ]
+    },
+    "312": {
+      "op": "dig 4",
+      "defined_out": [
+        "amount#0",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "maybe_value%2#0",
+        "amount#0"
+      ]
+    },
+    "314": {
+      "op": "dup",
+      "defined_out": [
+        "amount#0",
+        "amount#0 (copy)",
+        "maybe_value%2#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "maybe_value%2#0",
+        "amount#0 (copy)",
+        "amount#0 (copy)"
+      ]
+    },
+    "315": {
+      "op": "cover 2",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "maybe_value%2#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "317": {
+      "op": "+",
+      "defined_out": [
+        "amount#0",
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%18#0"
+      ]
+    },
+    "318": {
+      "op": "intc_3 // 5000000",
+      "defined_out": [
+        "5000000",
+        "amount#0",
+        "tmp%18#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%18#0",
+        "5000000"
+      ]
+    },
+    "319": {
+      "op": "<=",
+      "defined_out": [
+        "amount#0",
+        "tmp%19#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%19#0"
+      ]
+    },
+    "320": {
+      "error": "REJECTED: Daily 5 ALGO spending limit exceeded!",
+      "op": "assert // REJECTED: Daily 5 ALGO spending limit exceeded!",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0"
+      ]
+    },
+    "321": {
+      "op": "global CurrentApplicationAddress",
+      "defined_out": [
+        "amount#0",
+        "tmp%20#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%20#0"
+      ]
+    },
+    "323": {
+      "op": "acct_params_get AcctBalance",
+      "defined_out": [
+        "amount#0",
+        "check%0#0",
+        "value%0#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "value%0#0",
+        "check%0#0"
+      ]
+    },
+    "325": {
+      "error": "account funded",
+      "op": "assert // account funded",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "value%0#0"
+      ]
+    },
+    "326": {
+      "op": "dig 1",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "value%0#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "328": {
+      "op": ">=",
+      "defined_out": [
+        "amount#0",
+        "tmp%21#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%21#0"
+      ]
+    },
+    "329": {
+      "error": "REJECTED: Insufficient contract balance!",
+      "op": "assert // REJECTED: Insufficient contract balance!",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0"
+      ]
+    },
+    "330": {
+      "op": "itxn_begin"
+    },
+    "331": {
+      "op": "dup",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "amount#0 (copy)"
+      ]
+    },
+    "332": {
+      "op": "itxn_field Amount",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0"
+      ]
+    },
+    "334": {
+      "op": "dig 3",
+      "defined_out": [
+        "amount#0",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "recipient#0"
+      ]
+    },
+    "336": {
+      "op": "itxn_field Receiver",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0"
+      ]
+    },
+    "338": {
+      "op": "intc_1 // pay",
+      "defined_out": [
+        "amount#0",
+        "pay",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "pay"
+      ]
+    },
+    "339": {
+      "op": "itxn_field TypeEnum",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0"
+      ]
+    },
+    "341": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "0"
+      ]
+    },
+    "342": {
+      "op": "itxn_field Fee",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0"
+      ]
+    },
+    "344": {
+      "op": "itxn_submit"
+    },
+    "345": {
+      "op": "txn Sender",
+      "defined_out": [
+        "amount#0",
+        "recipient#0",
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%22#0"
+      ]
+    },
+    "347": {
+      "op": "dup",
+      "defined_out": [
+        "amount#0",
+        "recipient#0",
+        "tmp%22#0",
+        "tmp%22#0 (copy)"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%22#0",
+        "tmp%22#0 (copy)"
+      ]
+    },
+    "348": {
+      "op": "intc_0 // 0",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%22#0",
+        "tmp%22#0 (copy)",
+        "0"
+      ]
+    },
+    "349": {
+      "op": "bytec_0 // \"daily_spent\"",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%22#0",
+        "tmp%22#0 (copy)",
+        "0",
+        "\"daily_spent\""
+      ]
+    },
+    "350": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "amount#0",
+        "maybe_exists%3#0",
+        "maybe_value%3#0",
+        "recipient#0",
+        "tmp%22#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%22#0",
+        "maybe_value%3#0",
+        "maybe_exists%3#0"
+      ]
+    },
+    "351": {
+      "error": "check self.daily_spent exists for account",
+      "op": "assert // check self.daily_spent exists for account",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "amount#0",
+        "tmp%22#0",
+        "maybe_value%3#0"
+      ]
+    },
+    "352": {
+      "op": "uncover 2",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%22#0",
+        "maybe_value%3#0",
+        "amount#0"
+      ]
+    },
+    "354": {
+      "op": "+",
+      "defined_out": [
+        "amount#0",
+        "recipient#0",
+        "tmp%22#0",
+        "tmp%23#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%22#0",
+        "tmp%23#0"
+      ]
+    },
+    "355": {
+      "op": "bytec_0 // \"daily_spent\""
+    },
+    "356": {
+      "op": "swap",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "tmp%22#0",
+        "\"daily_spent\"",
+        "tmp%23#0"
+      ]
+    },
+    "357": {
+      "op": "app_local_put",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "358": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1",
+        "amount#0",
+        "recipient#0"
+      ],
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0",
+        "1"
+      ]
+    },
+    "359": {
+      "op": "return",
+      "stack_out": [
+        "current_time#0",
+        "amount#0",
+        "recipient#0",
+        "signature#0",
+        "agent#0"
+      ]
+    },
+    "360": {
+      "subroutine": "ageniz_contract.AgenizContract.get_daily_spent[routing]",
+      "params": {},
+      "block": "get_daily_spent",
+      "stack_in": [],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "362": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1",
+        "0"
+      ]
+    },
+    "363": {
+      "op": "bytec_0 // \"daily_spent\"",
+      "defined_out": [
+        "\"daily_spent\"",
+        "0",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1",
+        "0",
+        "\"daily_spent\""
+      ]
+    },
+    "364": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "maybe_value%0#0"
+      ],
+      "stack_out": [
+        "maybe_value%0#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "365": {
+      "error": "check self.daily_spent exists for account",
+      "op": "assert // check self.daily_spent exists for account",
+      "stack_out": [
+        "maybe_value%0#0"
+      ]
+    },
+    "366": {
+      "op": "itob",
+      "defined_out": [
+        "aggregate%val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "aggregate%val_as_bytes%0#0"
+      ]
+    },
+    "367": {
+      "op": "bytec 4 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "aggregate%val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "aggregate%val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "369": {
+      "op": "swap",
+      "stack_out": [
+        "0x151f7c75",
+        "aggregate%val_as_bytes%0#0"
+      ]
+    },
+    "370": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "tmp%2#0"
+      ]
+    },
+    "371": {
+      "op": "log",
+      "stack_out": []
+    },
+    "372": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "1"
+      ]
+    },
+    "373": {
+      "op": "return",
+      "stack_out": []
+    },
+    "374": {
+      "subroutine": "ageniz_contract.AgenizContract.get_remaining_limit[routing]",
+      "params": {},
+      "block": "get_remaining_limit",
+      "stack_in": [],
+      "op": "txn Sender",
+      "defined_out": [
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1"
+      ]
+    },
+    "376": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "0",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1",
+        "0"
+      ]
+    },
+    "377": {
+      "op": "bytec_0 // \"daily_spent\"",
+      "defined_out": [
+        "\"daily_spent\"",
+        "0",
+        "tmp%0#1"
+      ],
+      "stack_out": [
+        "tmp%0#1",
+        "0",
+        "\"daily_spent\""
+      ]
+    },
+    "378": {
+      "op": "app_local_get_ex",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "spent#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "379": {
+      "op": "swap",
+      "stack_out": [
+        "maybe_exists%0#0",
+        "spent#0"
+      ]
+    },
+    "380": {
+      "op": "dup",
+      "stack_out": [
+        "maybe_exists%0#0",
+        "spent#0",
+        "spent#0 (copy)"
+      ]
+    },
+    "381": {
+      "op": "uncover 2",
+      "defined_out": [
+        "maybe_exists%0#0",
+        "spent#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "spent#0",
+        "maybe_exists%0#0"
+      ]
+    },
+    "383": {
+      "error": "check self.daily_spent exists for account",
+      "op": "assert // check self.daily_spent exists for account",
+      "stack_out": [
+        "spent#0",
+        "spent#0"
+      ]
+    },
+    "384": {
+      "op": "intc_3 // 5000000",
+      "defined_out": [
+        "5000000",
+        "spent#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "spent#0",
+        "5000000"
+      ]
+    },
+    "385": {
+      "op": ">=",
+      "defined_out": [
+        "spent#0",
+        "tmp%1#1"
+      ],
+      "stack_out": [
+        "spent#0",
+        "tmp%1#1"
+      ]
+    },
+    "386": {
+      "op": "bz get_remaining_limit_else_body@3",
+      "stack_out": [
+        "spent#0"
+      ]
+    },
+    "389": {
+      "op": "intc_0 // 0",
+      "defined_out": [
+        "spent#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "tmp%0#0"
+      ]
+    },
+    "390": {
+      "block": "get_remaining_limit_after_inlined_ageniz_contract.AgenizContract.get_remaining_limit@4",
+      "stack_in": [
+        "spent#0",
+        "tmp%0#0"
+      ],
+      "op": "itob",
+      "defined_out": [
+        "aggregate%val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "aggregate%val_as_bytes%0#0"
+      ]
+    },
+    "391": {
+      "op": "bytec 4 // 0x151f7c75",
+      "defined_out": [
+        "0x151f7c75",
+        "aggregate%val_as_bytes%0#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "aggregate%val_as_bytes%0#0",
+        "0x151f7c75"
+      ]
+    },
+    "393": {
+      "op": "swap",
+      "stack_out": [
+        "spent#0",
+        "0x151f7c75",
+        "aggregate%val_as_bytes%0#0"
+      ]
+    },
+    "394": {
+      "op": "concat",
+      "defined_out": [
+        "tmp%2#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "tmp%2#0"
+      ]
+    },
+    "395": {
+      "op": "log",
+      "stack_out": [
+        "spent#0"
+      ]
+    },
+    "396": {
+      "op": "intc_1 // 1",
+      "defined_out": [
+        "1"
+      ],
+      "stack_out": [
+        "spent#0",
+        "1"
+      ]
+    },
+    "397": {
+      "op": "return",
+      "stack_out": [
+        "spent#0"
+      ]
+    },
+    "398": {
+      "block": "get_remaining_limit_else_body@3",
+      "stack_in": [
+        "spent#0"
+      ],
+      "op": "intc_3 // 5000000",
+      "defined_out": [
+        "5000000"
+      ],
+      "stack_out": [
+        "spent#0",
+        "5000000"
+      ]
+    },
+    "399": {
+      "op": "dig 1",
+      "defined_out": [
+        "5000000",
+        "spent#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "5000000",
+        "spent#0"
+      ]
+    },
+    "401": {
+      "op": "-",
+      "defined_out": [
+        "spent#0",
+        "tmp%0#0"
+      ],
+      "stack_out": [
+        "spent#0",
+        "tmp%0#0"
+      ]
+    },
+    "402": {
+      "op": "b get_remaining_limit_after_inlined_ageniz_contract.AgenizContract.get_remaining_limit@4"
+    }
+  }
+}
