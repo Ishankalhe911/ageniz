@@ -1,10 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
-// ✅ THE NEW UNIFIED WAY
-const PROTECTED_URL = 'http://localhost:8000/api/v1/premium-data';
-const ORACLE_URL = 'http://localhost:8000/attest';
-const AGENT_ADDRESS = 'EUKRBWJBKMYRCRQOHFGEUMXGK2JDXESZ5A2W5SJVJVTF7BW5CWBSUG422Q';
+const BACKEND_URL = 'https://ageniz-backend.onrender.com'; // Create a base URL for neatness
+const PROTECTED_URL = `${BACKEND_URL}/api/v1/premium-data`;
+const ORACLE_URL = `${BACKEND_URL}/attest`;
+// ✅ A mathematically valid dummy address for testing
+const AGENT_ADDRESS = 'ZVFEJHPZVTOCHPNOYYUWQL7GDX5EBTRMX2ADK3FPL7MSQMF6AHFVO4RSSQ';
 
 export default function AgentDashboard() {
   const [logs, setLogs] = useState([]);
@@ -90,12 +91,12 @@ export default function AgentDashboard() {
       addLog(`🔑 [AGENIZ] Signature received`, 'success');
 
       addLog('🔗 [ALGORAND] Executing real payment on smart contract...', 'info');
-
+      const DEMO_REAL_ADDRESS = "YQAIQ3ONDOAP3DLFEPDS4L4PC3LCZ5EQPC56RPF3WDD2LHAYEDBQHJ4JMI";
       try {
-        const contractCall = await axios.post('http://localhost:8000/execute-payment', {
+        const contractCall = await axios.post(`${BACKEND_URL}/execute-payment`, {
           agent_address: payload.agent_address,
           amount_micro: payload.amount_micro,
-          recipient_address: payload.recipient_address,
+          recipient_address:DEMO_REAL_ADDRESS,
           signature_b64: oracleData.signature_b64
         });
 
@@ -201,7 +202,7 @@ export default function AgentDashboard() {
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '6px 14px', borderRadius: 100, border: '1px solid rgba(0,255,136,0.2)', background: 'rgba(0,255,136,0.05)', fontFamily: 'Space Mono', fontSize: 11, color: '#00ff88' }}>
             <div style={{ width: 7, height: 7, borderRadius: '50%', background: '#00ff88', animation: 'pulse 2s infinite' }} />
-            Oracle Online · App ID  758871176
+            Oracle Online · App ID  758908955
           </div>
         </div>
 
