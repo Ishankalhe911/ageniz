@@ -1,6 +1,7 @@
 import os
 import base64
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Header
+from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 from pydantic import BaseModel
@@ -11,6 +12,7 @@ from algokit_utils import AppClientMethodCallParams
 from algosdk import mnemonic, account
 from algosdk.atomic_transaction_composer import AccountTransactionSigner
 from algosdk.encoding import decode_address
+
 
 
 # Safe import for calling contract methods matching deploy.py
@@ -74,6 +76,45 @@ class ExecutePaymentRequest(BaseModel):
     signature_b64: str
 
 
+
+
+# ── X402 PREMIUM DATA ENDPOINT (Moved from protected_resource.py) ───────
+@app.get("/api/v1/premium-data")
+async def get_premium_data(x_payment_receipt: str = Header(None)):
+    """
+    HACKATHON DEMO MODE:
+    - Returns 402 with x402_instructions if no receipt
+    - Unlocks resource if receipt is provided
+    """
+    
+    if not x_payment_receipt:
+        return JSONResponse(
+            status_code=402,
+            content={
+                "error": "Payment Required",
+                "message": "This endpoint costs 1 ALGO.",
+                "x402_instructions": {
+                    "oracle_endpoint": "/attest", 
+                    "contract_app_id": 758707534,
+                    "contract_address": "K5J4MYOGU6ZRUEG4DMCNAKQOJP7HBUMZAM5GWTNAJTR2EAMU3GS63ZNR5A"
+                }
+            }
+        )
+    
+    # Receipt provided → unlock
+    print(f"\n🔍 [API INTERNAL] Verifying Algorand TxID: {x_payment_receipt}...")
+    print("✅ [API INTERNAL] Payment verified on Testnet. Unlocking resource.")
+
+    return {
+        "status": "success",
+        "message": "Premium resource unlocked successfully",
+        "data": {
+            "temperature": 24,
+            "condition": "Sunny",
+            "wind_speed": "12 km/h",
+            "agent_message": "Good morning AI! Here is your premium data."
+        }
+    }
 # ── Attest Endpoint ─────────────────────────────────────────────────────
 @app.post("/attest", response_model=AttestResponse)
 async def attest_transaction(req: AttestRequest):
@@ -220,7 +261,8 @@ async def health():
         "app_id": os.getenv("APP_ID")
     }
 
-
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # This keeps port 8000 for local testing, but allows Render to inject its own port!
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

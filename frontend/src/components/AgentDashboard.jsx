@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
+// ✅ THE NEW UNIFIED WAY
+const PROTECTED_URL = 'http://localhost:8000/api/v1/premium-data';
 const ORACLE_URL = 'http://localhost:8000/attest';
-const PROTECTED_URL = 'http://localhost:8001/api/v1/premium-data';
 const AGENT_ADDRESS = 'EUKRBWJBKMYRCRQOHFGEUMXGK2JDXESZ5A2W5SJVJVTF7BW5CWBSUG422Q';
 
 export default function AgentDashboard() {
