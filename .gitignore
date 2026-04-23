@@ -19,3 +19,8 @@ build/
 
 # Algorand / Local test data (optional but good)
 .algo/
+
+
+# Machine Learning Models and Data
+oracle/models/*.pkl
+oracle/models/*.csv
